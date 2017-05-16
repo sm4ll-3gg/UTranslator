@@ -20,7 +20,7 @@ protected:
     static QJsonDocument   getJsonDoc(const QString& address);
 
 private: // Methods
-    Dictionary      getDictionary(const QJsonDocument& doc);
+    void    initDictionary(const QJsonDocument& doc);
 
 private:
     Dictionary      dictionary;

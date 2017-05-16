@@ -2,11 +2,14 @@
 
 #include <QDebug>
 #include <QFile>
+#include <QJsonArray>
+#include <QJsonValue>
+#include <QJsonObject>
 
 AbstractDictionary::AbstractDictionary(const QJsonDocument &doc, QObject *parent)
     : QObject(parent)
 {
-    getDictionary(doc);
+    initDictionary(doc);
 }
 
 QJsonDocument AbstractDictionary::getJsonDoc(const QString &address)
@@ -17,8 +20,20 @@ QJsonDocument AbstractDictionary::getJsonDoc(const QString &address)
     return QJsonDocument::fromJson(file.readAll());
 }
 
-AbstractDictionary::Dictionary AbstractDictionary::getDictionary(const QJsonDocument &doc)
+void AbstractDictionary::initDictionary(const QJsonDocument &doc)
 {
-    qDebug() << doc.isEmpty();
-    return Dictionary();
+    QJsonArray arr = doc.array();
+
+    std::for_each(arr.begin(), arr.end(), [this](const QJsonValue& it)
+    {
+        if(!it.isObject())
+            return;
+
+        QJsonObject item = it.toObject();
+
+        QString word = item.value("word").toString();
+        QString translation = item.value("translation").toString();
+        dictionary.insert(word, translation);
+        qDebug() << word << translation;
+    });
 }
