@@ -1,7 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "Languages/rulang.h"
+#include "translator.h"
+#include "Translators/rutoen.h"
+#include <QStringList>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -9,7 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    RuLang::get();
+    Translator t;
+    t.translate("", Language::RU, Language::EN);
 }
 
 MainWindow::~MainWindow()

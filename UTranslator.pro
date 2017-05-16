@@ -27,17 +27,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    Languages/abstractlanguage.cpp \
     translator.cpp \
-    Languages/enlang.cpp \
-    Languages/rulang.cpp \
-    Translators/rutoen.cpp
+    Translators/rutoen.cpp \
+    Dictionaries/abstractdictionary.cpp \
+    Dictionaries/ruendictionary.cpp
 
 HEADERS  += mainwindow.h \
-    Languages/abstractlanguage.h \
     translator.h \
-    Languages/enlang.h \
-    Languages/rulang.h \
-    Translators/rutoen.h
+    Translators/rutoen.h \
+    Dictionaries/abstractdictionary.h \
+    Dictionaries/ruendictionary.h
 
 FORMS    += mainwindow.ui
+
+DISTFILES += \
+    Dictionaries/RuEn.json

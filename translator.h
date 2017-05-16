@@ -4,15 +4,15 @@
 #include <QObject>
 #include <QString>
 
-namespace Languages {
-    enum Languages{EN = 0, RU = 1};
+namespace Language {
+    enum Language{EN = 0, RU = 1};
 }
 
 class Translator : public QObject
 {
     Q_OBJECT
 
-    using Language = Languages::Languages;
+    using Language = Language::Language;
 
 public:
     explicit Translator(QObject *parent = 0);
