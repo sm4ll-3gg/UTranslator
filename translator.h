@@ -25,7 +25,7 @@ public:
     explicit Translator(QObject *parent = 0);
 
 public slots:
-    QString &&translate(const QString& input, Language from, Language to);
+    QString translate(const QString& input, Language from, Language to);
 };
 
 #endif // TRANSLATOR_H

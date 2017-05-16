@@ -8,7 +8,7 @@ Translator::Translator(QObject *parent)
     : QObject(parent)
 {}
 
-QString&& Translator::translate(const QString &input, Language from, Language to)
+QString Translator::translate(const QString &input, Language from, Language to)
 {
     QStringList text = input.split(" ");
 

@@ -16,11 +16,14 @@ protected:
 public:
     explicit AbstractDictionary(const QJsonDocument& doc,
                                 QObject *parent = 0);
+
+    QString                 getTranslation(const QString& word);
+
 protected:
-    static QJsonDocument   getJsonDoc(const QString& address);
+    static QJsonDocument    getJsonDoc(const QString& address);
 
 private: // Methods
-    void    initDictionary(const QJsonDocument& doc);
+    void                    initDictionary(const QJsonDocument& doc);
 
 private:
     Dictionary      dictionary;

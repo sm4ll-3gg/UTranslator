@@ -14,9 +14,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     initUi();
 
-    Translator t;
-    t.translate("", Language::RU, Language::EN);
-
     connect(ui->swapButton, &QPushButton::clicked,
             this, &MainWindow::swapLangs);
     connect(ui->translateButton, &QPushButton::clicked,

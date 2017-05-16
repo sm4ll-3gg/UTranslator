@@ -15,7 +15,7 @@ class RuToEn : public QObject
 public: // Methods
     explicit RuToEn(QStringList&& text, QObject *parent = 0);
 
-    QString&& translate();
+    QString translate();
 
 //private:
     //static Dictionary  getDictionary();
