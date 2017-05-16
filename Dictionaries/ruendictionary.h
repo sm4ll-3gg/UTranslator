@@ -3,7 +3,7 @@
 
 #include "abstractdictionary.h"
 
-class RuEnDictionary : public AbstractDictionary
+class RuEnDictionary final : private AbstractDictionary
 {
     Q_OBJECT
 
@@ -14,11 +14,13 @@ public:
         return d;
     }
 
-private:
+private: // Methods
     RuEnDictionary();
     RuEnDictionary(const RuEnDictionary&);
     RuEnDictionary& operator=(const RuEnDictionary&) = delete;
     ~RuEnDictionary();
+
+
 
 };
 

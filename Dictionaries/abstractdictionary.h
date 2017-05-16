@@ -14,13 +14,16 @@ protected:
     using Dictionary = QMap<QString, QString>;
 
 public:
-    explicit AbstractDictionary(const QJsonDocument& dictionaryDocument,
+    explicit AbstractDictionary(const QJsonDocument& doc,
                                 QObject *parent = 0);
+protected:
+    static QJsonDocument   getJsonDoc(const QString& address);
+
 private: // Methods
-    Dictionary  constructDictionaryFromJson(const QJsonDocument& doc);
+    Dictionary      getDictionary(const QJsonDocument& doc);
 
 private:
-    Dictionary  dictionary;
+    Dictionary      dictionary;
 };
 
 #endif // ABSTRACTDICTIONARY_H

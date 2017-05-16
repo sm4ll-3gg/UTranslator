@@ -4,6 +4,8 @@
 #include "translator.h"
 #include "Translators/rutoen.h"
 #include <QStringList>
+#include <QFile>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -19,3 +21,5 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+
