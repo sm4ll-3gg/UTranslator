@@ -14,7 +14,9 @@ AbstractDictionary::AbstractDictionary(const QJsonDocument &doc, QObject *parent
 
 QString AbstractDictionary::getTranslation(const QString &word)
 {
-    return dictionary.value(word);
+    QString translation = dictionary.value(word);
+
+    return translation == "" ? word : translation;
 }
 
 QJsonDocument AbstractDictionary::getJsonDoc(const QString &address)

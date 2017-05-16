@@ -16,5 +16,5 @@ QString Translator::translate(const QString &input, Language from, Language to)
        (to == Language::EN))
         return RuToEn( std::move(text) ).translate();
 
-    return "";
+    return input;
 }
