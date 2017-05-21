@@ -5,6 +5,7 @@
 #include <QJsonArray>
 #include <QJsonValue>
 #include <QJsonObject>
+#include <QDir>
 
 AbstractDictionary::AbstractDictionary(const QJsonDocument &doc, QObject *parent)
     : QObject(parent)
@@ -29,6 +30,7 @@ QJsonDocument AbstractDictionary::getJsonDoc(const QString &address)
 
 void AbstractDictionary::initDictionary(const QJsonDocument &doc)
 {
+    qDebug() << doc.isArray();
     QJsonArray arr = doc.array();
 
     std::for_each(arr.begin(), arr.end(), [this](const QJsonValue& it)
@@ -36,11 +38,25 @@ void AbstractDictionary::initDictionary(const QJsonDocument &doc)
         if(!it.isObject())
             return;
 
-        QJsonObject item = it.toObject();
+        processJsonObject( it.toObject() );
 
-        QString word = item.value("word").toString();
-        QString translation = item.value("translation").toString();
-        dictionary.insert(word, translation);
-        qDebug() << word << translation;
+//        QString word = item.value("word").toString();
+//        QString translation = item.value("translation").toString();
+//        dictionary.insert(word, translation);
+//        qDebug() << word << translation;
     });
+}
+
+void AbstractDictionary::processJsonObject(const QJsonObject& word)
+{
+    QString partOfSpeech = word.value("part of speech").toString();
+
+    if(partOfSpeech == "noun")
+        qDebug() << "noun";
+    else if(partOfSpeech == "verb")
+        qDebug() << "vetb";
+    else if(partOfSpeech == "adj")
+        qDebug() << "adjective";
+    else
+        qDebug() << "undefined part of speech";
 }

@@ -24,6 +24,7 @@ protected:
 
 private: // Methods
     void                    initDictionary(const QJsonDocument& doc);
+    void                    processJsonObject(const QJsonObject& word);
 
 private:
     Dictionary      dictionary;

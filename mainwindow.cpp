@@ -55,8 +55,8 @@ void MainWindow::translate()
     QString toLang = ui->toLangBox->currentText();
 
     QString translation = translator.translate(text,
-                                               Language::languages.value(fromLang),
-                                               Language::languages.value(toLang));
+                                               Languages::languages.value(fromLang),
+                                               Languages::languages.value(toLang));
     ui->toLangText->setPlainText(translation);
 }
 

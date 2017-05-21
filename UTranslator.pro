@@ -30,13 +30,18 @@ SOURCES += main.cpp\
     translator.cpp \
     Translators/rutoen.cpp \
     Dictionaries/abstractdictionary.cpp \
-    Dictionaries/ruendictionary.cpp
+    Dictionaries/ruendictionary.cpp \
+    Dictionaries/Words/abstractword.cpp \
+    languages.cpp \
+    Dictionaries/Words/noun.cpp
 
 HEADERS  += mainwindow.h \
     translator.h \
     Translators/rutoen.h \
     Dictionaries/abstractdictionary.h \
-    Dictionaries/ruendictionary.h
+    Dictionaries/ruendictionary.h \
+    Dictionaries/Words/abstractword.h \
+    Dictionaries/Words/noun.h
 
 FORMS    += mainwindow.ui
 
