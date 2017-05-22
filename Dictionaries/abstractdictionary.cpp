@@ -1,4 +1,5 @@
 #include "abstractdictionary.h"
+#include "Words/noun.h"
 
 #include <QDebug>
 #include <QFile>
@@ -7,17 +8,26 @@
 #include <QJsonObject>
 #include <QDir>
 
-AbstractDictionary::AbstractDictionary(const QJsonDocument &doc, QObject *parent)
-    : QObject(parent)
+AbstractDictionary::AbstractDictionary(Language f, Language t,
+                                       const QJsonDocument &doc, QObject *parent)
+    :QObject(parent),
+     from(f), to(t)
 {
     initDictionary(doc);
 }
 
 QString AbstractDictionary::getTranslation(const QString &word)
 {
-    QString translation = dictionary.value(word);
+    for(auto it = dictionary.begin(); it != dictionary.end(); ++it)
+    {
+        DictNode curr = *it;
+        QString translation = curr.contains(word);
 
-    return translation == "" ? word : translation;
+        if(translation != "")
+            return translation;
+    }
+
+    return word;
 }
 
 QJsonDocument AbstractDictionary::getJsonDoc(const QString &address)
@@ -52,11 +62,19 @@ void AbstractDictionary::processJsonObject(const QJsonObject& word)
     QString partOfSpeech = word.value("part of speech").toString();
 
     if(partOfSpeech == "noun")
-        qDebug() << "noun";
+        appendNoun(word);
     else if(partOfSpeech == "verb")
         qDebug() << "vetb";
     else if(partOfSpeech == "adj")
         qDebug() << "adjective";
     else
         qDebug() << "undefined part of speech";
+}
+
+void AbstractDictionary::appendNoun(const QJsonObject &word)
+{
+    pWord key = new Noun(from, word.value("from").toObject());
+    pWord value = new Noun(to, word.value("to").toObject());
+
+    dictionary.push_back(DictNode(key, value));
 }

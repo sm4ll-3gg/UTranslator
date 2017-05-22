@@ -1,3 +1,6 @@
+#ifndef LANGUAGES_H
+#define LANGUAGES_H
+
 #include <QMap>
 
 namespace Languages {
@@ -9,3 +12,5 @@ static const QMap<QString, Language> languages{
             Pair("Русский", RU),
             Pair("Английский", EN)};
 }
+
+#endif // LANGUAGES_H

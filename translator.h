@@ -1,7 +1,7 @@
 #ifndef TRANSLATOR_H
 #define TRANSLATOR_H
 
-#include "languages.cpp"
+#include "languages.h"
 
 #include <QObject>
 #include <QString>

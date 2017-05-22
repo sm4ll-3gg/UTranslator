@@ -32,8 +32,8 @@ SOURCES += main.cpp\
     Dictionaries/abstractdictionary.cpp \
     Dictionaries/ruendictionary.cpp \
     Dictionaries/Words/abstractword.cpp \
-    languages.cpp \
-    Dictionaries/Words/noun.cpp
+    Dictionaries/Words/noun.cpp \
+    Dictionaries/dictnode.cpp
 
 HEADERS  += mainwindow.h \
     translator.h \
@@ -41,7 +41,9 @@ HEADERS  += mainwindow.h \
     Dictionaries/abstractdictionary.h \
     Dictionaries/ruendictionary.h \
     Dictionaries/Words/abstractword.h \
-    Dictionaries/Words/noun.h
+    Dictionaries/Words/noun.h \
+    languages.h \
+    Dictionaries/dictnode.h
 
 FORMS    += mainwindow.ui
 

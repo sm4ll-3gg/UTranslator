@@ -1,8 +1,12 @@
 #ifndef ABSTRACTDICTIONARY_H
 #define ABSTRACTDICTIONARY_H
 
+//#include "Words/abstractword.h"
+#include "dictnode.h"
+
+#include <memory>
 #include <QObject>
-#include <QMap>
+#include <QList>
 #include <QString>
 #include <QJsonDocument>
 
@@ -11,10 +15,14 @@ class AbstractDictionary : public QObject
     Q_OBJECT
 
 protected:
-    using Dictionary = QMap<QString, QString>;
+    using Language = Languages::Language;
+
+    using pWord = AbstractWord*;
+    using Dictionary = QList<DictNode>;
 
 public:
-    explicit AbstractDictionary(const QJsonDocument& doc,
+    explicit AbstractDictionary(Language from, Language to,
+                                const QJsonDocument& doc,
                                 QObject *parent = 0);
 
     QString                 getTranslation(const QString& word);
@@ -24,9 +32,17 @@ protected:
 
 private: // Methods
     void                    initDictionary(const QJsonDocument& doc);
+
     void                    processJsonObject(const QJsonObject& word);
 
+
+
+    void                    appendNoun(const QJsonObject& word);
+
 private:
+    Language        from;
+    Language        to;
+
     Dictionary      dictionary;
 };
 

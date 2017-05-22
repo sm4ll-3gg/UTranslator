@@ -1,49 +1,81 @@
 [
 	{
 		"part of speech": "noun",
-		"gender": "female",
 		
 		"from":
 		{
-			"stem": "мам",
+			"stem": 	"мам",
+            "gender": 	"female",
 			"singular": ["мама", "мамы", "маме", "маму", "мамой", "маме"],
-			"plural": ["мымы", "мам", "мамам", "мам", "мамами", "мамах"]
+			"plural": 	["мымы", "мам", "мамам", "мам", "мамами", "мамах"]
+		},
+
+		"to":
+		{
+			"stem": 	"mother",
+			"gender": 	"female",
+			"singular": ["mother", "of mother", "to mother", "mother", "by mother", "about mother"],
+			"plural": 	["mothers", "of mothers", "to mothers", "mothers", "by mothers", "about mothers"]
 		}
 	},
 
 	{
 		"part of speech": "noun",
-		"gender": "male",
 		
 		"from":
 		{
 			"stem": "пап",
+			"gender": "male",
 			"singular": ["папа", "папы", "папе", "папу", "папой", "папе"],
 			"plural": ["папы", "пап", "папам", "пап", "папами", "папах"]
+		},
+
+		"to":
+		{
+			"stem": 	"father",
+			"gender": 	"male",
+			"singular": ["father", "of father", "to father", "father", "by father", "about father"],
+			"plural": 	["fathers", "of fathers", "to fathers", "fathers", "by fathers", "about fathers"]
 		}
 	},
 
 	{
 		"part of speech": "noun",
-		"gender": "female",
 		
 		"from":
 		{
 			"stem": "рам",
+			"gender": "female",
 			"singular": ["рама", "рамы", "раме", "раму", "рамой", "раме"],
 			"plural": ["рамы", "рам", "рамам", "рамы", "рамами", "рамах"]
+		},
+
+		"to":
+		{
+			"stem": 	"frame",
+			"gender": 	"female",
+			"singular": ["frame", "of frame", "to frame", "frame", "by frame", "about frame"],
+			"plural": 	["frames", "of frames", "to frames", "frames", "by frames", "about frames"]
 		}
 	},
 
 	{
 		"part of speech": "noun",
-		"gender": "mid",
 		
 		"from":
 		{
 			"stem": "ок",
+			"gender": "middle",
 			"singular": ["окно", "окна", "окну", "окно", "окном", "окне"],
 			"plural": ["окна", "окон", "окнам", "окна", "окнами", "окнах"]
+		},
+
+		"to":
+		{
+			"stem": 	"window",
+			"gender": 	"middle",
+			"singular": ["window", "of window", "to window", "window", "by window", "about window"],
+			"plural": 	["windows", "of windows", "to windows", "windows", "by windows", "about windows"]
 		}
 	}
 ]

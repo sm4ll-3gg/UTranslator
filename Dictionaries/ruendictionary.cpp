@@ -1,7 +1,8 @@
 #include "ruendictionary.h"
 
 RuEnDictionary::RuEnDictionary()
-    :AbstractDictionary(getJsonDoc("../UTranslator/Dictionaries/RuEn.json"))
+    :AbstractDictionary(Language::RU, Language::EN,
+                        getJsonDoc("../UTranslator/Dictionaries/RuEn.json"))
 {}
 
 RuEnDictionary::~RuEnDictionary()
