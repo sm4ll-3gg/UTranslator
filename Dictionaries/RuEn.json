@@ -77,5 +77,26 @@
 			"singular": ["window", "of window", "to window", "window", "by window", "about window"],
 			"plural": 	["windows", "of windows", "to windows", "windows", "by windows", "about windows"]
 		}
+	},
+
+	{
+		"part of speech": "verb",
+
+		"from":
+		{
+			"stem": "м",
+			"infinitive": "мыть",
+			"present": ["моем", "мою", "моете", "моешь", "моют", "моет"],
+			"past": ["мыли", "мыл", "мыла", "мыло"]
+		},
+
+		"to":
+		{
+			"stem": "wash",
+			"infinitive": "wash",
+			"present": ["wash", "wash", "wash", "wash", "wash", "washes"],
+			"past": ["washed", "washed", "washed", "washed"]
+		}
 	}
 ]
+

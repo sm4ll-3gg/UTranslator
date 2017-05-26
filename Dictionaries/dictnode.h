@@ -2,7 +2,6 @@
 #define DICTNODE_H
 
 #include "Words/abstractword.h"
-#include "Words/noun.h"
 
 class DictNode
 {
@@ -14,7 +13,8 @@ public:
     const QString contains(const QString& word);
 
 private: // Methods
-    const QString &processNoun(const QString& word);
+    const QString& processNoun(const QString& word);
+    const QString& processVerb(const QString& word);
 
 private:
     pWord   from;

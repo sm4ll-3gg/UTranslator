@@ -1,5 +1,7 @@
 #include "abstractdictionary.h"
+
 #include "Words/noun.h"
+#include "Words/verb.h"
 
 #include <QDebug>
 #include <QFile>
@@ -11,7 +13,7 @@
 AbstractDictionary::AbstractDictionary(Language f, Language t,
                                        const QJsonDocument &doc, QObject *parent)
     :QObject(parent),
-     from(f), to(t)
+      from(f), to(t)
 {
     initDictionary(doc);
 }
@@ -50,10 +52,10 @@ void AbstractDictionary::initDictionary(const QJsonDocument &doc)
 
         processJsonObject( it.toObject() );
 
-//        QString word = item.value("word").toString();
-//        QString translation = item.value("translation").toString();
-//        dictionary.insert(word, translation);
-//        qDebug() << word << translation;
+        //        QString word = item.value("word").toString();
+        //        QString translation = item.value("translation").toString();
+        //        dictionary.insert(word, translation);
+        //        qDebug() << word << translation;
     });
 }
 
@@ -61,20 +63,27 @@ void AbstractDictionary::processJsonObject(const QJsonObject& word)
 {
     QString partOfSpeech = word.value("part of speech").toString();
 
+    pWord key = nullptr;
+    pWord value = nullptr;
+
+    QJsonObject fromObject = word.value("from").toObject();
+    QJsonObject toObject = word.value("to").toObject();
+
     if(partOfSpeech == "noun")
-        appendNoun(word);
+    {
+        key = new Noun(from , fromObject);
+        value = new Noun(to, toObject);
+    }
     else if(partOfSpeech == "verb")
-        qDebug() << "vetb";
+    {
+        key = new Verb(from, fromObject);
+        value = new Verb(to, toObject);
+    }
     else if(partOfSpeech == "adj")
         qDebug() << "adjective";
     else
         qDebug() << "undefined part of speech";
-}
 
-void AbstractDictionary::appendNoun(const QJsonObject &word)
-{
-    pWord key = new Noun(from, word.value("from").toObject());
-    pWord value = new Noun(to, word.value("to").toObject());
-
-    dictionary.push_back(DictNode(key, value));
+    if(key != nullptr && value != nullptr)
+        dictionary.push_back(DictNode(key, value));
 }

@@ -35,10 +35,6 @@ private: // Methods
 
     void                    processJsonObject(const QJsonObject& word);
 
-
-
-    void                    appendNoun(const QJsonObject& word);
-
 private:
     Language        from;
     Language        to;

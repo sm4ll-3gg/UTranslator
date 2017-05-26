@@ -1,20 +1,19 @@
 {
 	"part of speech": "noun",
-	"gender": "mid",
 		
 	"from":
 	{
-		"stem": "",
-		"gender": "",
+		"stem": 	"",
+		"gender": 	"",
 		"singular": ["", "", "", "", "", ""],
-		"plural": ["", "", "", "", "", ""]
+		"plural": 	["", "", "", "", "", ""]
 	},
 
 	"to":
 	{
-		"stem": "",
-		"gender": "",
+		"stem": 	"",
+		"gender": 	"",
 		"singular": ["", "", "", "", "", ""],
-		"plural": ["", "", "", "", "", ""]
+		"plural": 	["", "", "", "", "", ""]
 	}
 }
