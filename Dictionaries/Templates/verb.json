@@ -3,6 +3,7 @@
 
 	"from":
 	{
+		"stem": "",
 		"infinitive": "",
 		"present": ["", "", "", "", "", ""],
 		"past": ["", "", "", ""]
@@ -10,12 +11,9 @@
 
 	"to":
 	{
+		"stem": "",
 		"infinitive": "",
 		"present": ["", "", "", "", "", ""],
 		"past": ["", "", "", ""]
 	}
 }
-
-"infinitive": "wash",
-"present": ["wash", "wash", "wash", "wash", "wash", "washes"],
-"past": ["washed", "washed", "washed", "washed"]

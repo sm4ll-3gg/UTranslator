@@ -97,6 +97,66 @@
 			"present": ["wash", "wash", "wash", "wash", "wash", "washes"],
 			"past": ["washed", "washed", "washed", "washed"]
 		}
+	},
+
+	{
+		"part of speech": "verb",
+
+		"from":
+		{
+			"stem": "люб",
+			"infinitive": "любить",
+			"present": ["любим", "люблю", "любите", "любишь", "любят", "любит"],
+			"past": ["любили", "любил", "любила", "любило"]
+		},
+
+		"to":
+		{
+			"stem": "love",
+			"infinitive": "love",
+			"present": ["love", "love", "love", "love", "love", "loves"],
+			"past": ["loved", "loved", "loved", "loved"]
+		}
+	},
+
+	{
+		"part of speech": "verb",
+
+		"from":
+		{
+			"stem": "смотр",
+			"infinitive": "смотреть",
+			"present": ["смотрим", "смотрю", "смотрите", "смотришь", "смотрят", "смотрит"],
+			"past": ["смотрели", "смотрел", "смотрела", "смотрело"]
+		},
+
+		"to":
+		{
+			"stem": "watch",
+			"infinitive": "watch",
+			"present": ["watch", "watch", "watch", "watch", "watch", "watches"],
+			"past": ["watched", "watched", "watched", "watched"]
+		}
+	},
+
+	{
+		"part of speech": "verb",
+
+		"from":
+		{
+			"stem": "лома",
+			"infinitive": "ломать",
+			"present": ["ломаем", "ломаю", "ломаете", "ломаешь", "ломают", "ломает"],
+			"past": ["ломали", "ломал", "ломала", "ломало"]
+		},
+
+		"to":
+		{
+			"stem": "break",
+			"infinitive": "break",
+			"present": ["break", "break", "break", "break", "break", "breaks"],
+			"past": ["broke", "broke", "broke", "broke"]
+		}
 	}
 ]
 

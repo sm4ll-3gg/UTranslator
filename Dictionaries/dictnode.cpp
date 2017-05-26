@@ -18,7 +18,9 @@ const QString DictNode::contains(const QString &word)
         if(partOfSpeech == PartOfSpeech::NOUN)
             return processNoun(word);
         else if(partOfSpeech == PartOfSpeech::VERB)
+        {
             return processVerb(word);
+        }
         else if(partOfSpeech == PartOfSpeech::ADJ)
             qDebug() << "Process adj";
     }
@@ -26,7 +28,7 @@ const QString DictNode::contains(const QString &word)
     return "";
 }
 
-const QString& DictNode::processNoun(const QString &word)
+const QString DictNode::processNoun(const QString &word)
 {
     Noun* n_from = dynamic_cast<Noun*>(from);
 
@@ -41,7 +43,7 @@ const QString& DictNode::processNoun(const QString &word)
     return "";
 }
 
-const QString &DictNode::processVerb(const QString &word)
+const QString DictNode::processVerb(const QString &word)
 {
     Verb* v_from = dynamic_cast<Verb*>(from);
 
